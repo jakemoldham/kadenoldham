@@ -1,0 +1,27 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h1>MY PORTFOLIO</h1>
+  <% @portfolios.each do |portfolio| %>
+    <div class="portfolio">
+      <span class="photo"><%= portfolio.photo %></span>
+      <div>
+        <div class="title"><%= portfolio.title %></div>
+        <div class="desc"><%= portfolio.description %></div>
+      </div>
+      <% if user_signed_in? %>
+        <div>
+          <div><%= link_to 'Show', portfolio %></div>
+          <div><%= link_to 'Edit', edit_portfolio_path(portfolio) %></div>
+          <div><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <br>
+
+  <% if user_signed_in? %>
+    <%= link_to 'New Portfolio', new_portfolio_path %>
+  <% end %>
+</div>
