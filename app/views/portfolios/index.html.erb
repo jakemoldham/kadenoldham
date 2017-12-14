@@ -1,27 +1,43 @@
-<div class="container">
-  <p id="notice"><%= notice %></p>
+<div class="portfolio-container">
+  <div class="col-md-8">
+    <p id="notice"><%= notice %></p>
 
-  <h1>MY PORTFOLIO</h1>
-  <% @portfolios.each do |portfolio| %>
-    <div class="portfolio">
-      <span class="photo"><%= portfolio.photo %></span>
-      <div>
-        <div class="title"><%= portfolio.title %></div>
-        <div class="desc"><%= portfolio.description %></div>
-      </div>
-      <% if user_signed_in? %>
-        <div>
-          <div><%= link_to 'Show', portfolio %></div>
-          <div><%= link_to 'Edit', edit_portfolio_path(portfolio) %></div>
-          <div><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    <div class="portfolio-title">
+      <h1>MY PORTFOLIO</h1>
+      <div class="code-line">
+        <div class="code-rows ">
+          <div class="line hundred dark margin-none"></div>
+          <div class="line fifty orange margin-none"></div>
+          <div class="line fifty red margin-none"></div>
+          <div class="line hundred green margin-none"></div>
+          <div class="line fifty dark margin-none"></div>
+          <div class="line hide fifty blue margin-none"></div>
         </div>
-      <% end %>
+      </div>
     </div>
-  <% end %>
+    <% @portfolios.each do |portfolio| %>
+      <a href="<%= portfolio.link %>" class="link">
+        <div class="portfolio bg-light">
+          <span class="portfolio-photo"><%= image_tag portfolio.photo.url, class: "photo" %></span>
+          <div>
+            <div class="title"><%= portfolio.title %></div>
+            <div class="desc"><%= portfolio.description %></div>
+          </div>
+          <% if user_signed_in? %>
+            <div class="admin-btns-container">
+              <div><%= link_to 'Show', portfolio, class: "admin-btns" %></div>
+              <div><%= link_to 'Edit', edit_portfolio_path(portfolio), class: "admin-btns" %></div>
+              <div><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' }, class: "admin-btns" %></div>
+            </div>
+          <% end %>
+        </div>
+      </a>
+    <% end %>
 
-  <br>
+    <br>
 
-  <% if user_signed_in? %>
-    <%= link_to 'New Portfolio', new_portfolio_path %>
-  <% end %>
+    <% if user_signed_in? %>
+      <%= link_to 'New Portfolio', new_portfolio_path %>
+    <% end %>
+  </div>
 </div>

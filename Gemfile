@@ -15,6 +15,8 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'devise'
 gem 'petergate'
+gem 'carrierwave'
+gem 'carrierwave-sequel', :require => 'carrierwave/sequel'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

@@ -1,3 +1,13 @@
 @import "bootstrap";
 @import "static_pages";
 @import "portfolios";
+
+@font-face {
+  font-family: 'ProximaNova';
+  src:font-url('ProximaNova/Proxima-Nova-Regular.otf');
+}
+
+* {
+  font-family: 'ProximaNova'
+}
+

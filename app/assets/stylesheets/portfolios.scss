@@ -1,12 +1,51 @@
-.portfolio {
+.link {
   display: flex;
-  .photo {
+  color: #4d4d4d;
+  &:hover {
+    text-decoration: none;
+    color: #4d4d4d;
   }
-  .title {
-    border-bottom: 1px solid black;
+}
+
+
+.portfolio-container {
+  display: flex;
+  justify-content: center;
+  .portfolio-title {
+    margin-bottom: 30px;
+    .code-line .code-rows .line {
+      margin: 0 10px 0 0;
+    }
   }
-  .desc {
-  }
-  .link {
+  .portfolio {
+    display: flex;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px 1px #888888;
+    .portfolio-photo {
+      align-self: center;
+    }
+    .photo {
+      max-height: 100px;
+      width: 100px;
+    }
+    .title {
+      margin-left: 15px;
+      border-bottom: 1px solid #808080;
+    }
+    .desc {
+      max-width: 600px;
+      margin-left: 15px;
+    }
+    .admin-btns-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 20px;
+      .admin-btns {
+        color: #4d4d4d;
+      }
+    }
   }
 }
